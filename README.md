@@ -1,45 +1,48 @@
-# Ghabryel Dev — Portfólio
+GHABRYEL DEV
+────────────────────────
 
-Portfólio profissional feito com HTML, CSS e JavaScript puro, sem frameworks pesados.
+Portfólio profissional
+de Ghabryel Maia.
 
-## Estrutura
+🌐 Desenvolvedor Web
+🎓 Estudante de ADS
+💻 HTML • CSS • JavaScript
+📱 Sites responsivos
 
-- `index.html` — estrutura semântica e SEO.
-- `styles.css` — identidade visual, responsividade e animações leves.
-- `script.js` — configuração, componentes reutilizáveis, projetos e interações.
-- `assets/ghabryel-maia.png` — foto enviada para o projeto.
-- `assets/favicon.svg` — favicon.
+────────────────────────
 
-## Configuração rápida
+✨ SOBRE O PROJETO
 
-Abra `script.js` e altere somente esta parte:
+Portfólio desenvolvido para apresentar
+serviços, projetos demonstrativos e
+informações profissionais.
 
-```js
-const SITE_CONFIG = {
-  whatsappNumber: "SEU_NUMERO_AQUI",
-  social: {
-    instagram: "#",
-    github: "#",
-    linkedin: "#"
-  }
-};
-```
+────────────────────────
 
-No WhatsApp use apenas números, incluindo código do país e DDD.
+🛠️ TECNOLOGIAS
 
-Exemplo de formato:
-`5511999999999`
+HTML5
+CSS3
+JavaScript
 
-Depois substitua `#` pelas suas URLs reais de Instagram, GitHub e LinkedIn.
+────────────────────────
 
-## Adicionar projetos
+📁 ESTRUTURA
 
-Os projetos demonstrativos ficam no array `projects` dentro de `script.js`. Para adicionar um projeto, copie um objeto e altere `category`, `title`, `description`, `tech`, `theme` e `mock`.
+index.html
+styles.css
+script.js
+assets/
 
-Os projetos atuais estão identificados como **DEMONSTRATIVO** e **CONCEITO** para não sugerir clientes ou resultados que não existem.
+────────────────────────
 
-## Publicação
+🚀 PROJETO ONLINE
 
-Este projeto é estático e pode ser publicado diretamente em GitHub Pages, Cloudflare Pages, Netlify ou outro serviço de hospedagem estática.
+[Ver site]
 
-Não é necessário Java para rodar este portfólio. Java pode ser usado futuramente no backend caso você queira adicionar funcionalidades que precisem de servidor.
+────────────────────────
+
+👤 AUTOR
+
+Ghabryel Maia
+Ghabryel Dev
