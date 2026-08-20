@@ -305,3 +305,747 @@ h2 em,h1 em{font-style:normal;color:var(--accent)}
   .reveal{transition:none}
   .cursor{animation:none}
 }
+
+/* =========================================================
+   AJUSTES MOBILE — CORREÇÃO DE OVERFLOW + TIPOGRAFIA
+   ========================================================= */
+
+/* Impede qualquer elemento de criar rolagem horizontal */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+body {
+  position: relative;
+}
+
+/* Garante que todos os elementos respeitem a largura da tela */
+*,
+*::before,
+*::after {
+  max-width: 100%;
+}
+
+/* Imagens nunca ultrapassam a tela */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  /* Header sempre acima do conteúdo */
+  .site-header {
+    z-index: 9999;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 10000;
+    height: 72px;
+    padding: 0 18px;
+  }
+
+  /*
+    Fundo sólido/translúcido no menu para impedir
+    que os textos da página apareçam por trás.
+  */
+  .mobile-menu {
+    position: fixed;
+    z-index: 9998;
+
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-width: 100vw;
+
+    padding: 35px 24px;
+
+    background: #08090b;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    transition:
+      opacity .25s ease,
+      transform .25s ease,
+      visibility .25s ease;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    display: block;
+    width: 100%;
+    font-size: 25px;
+    line-height: 1.15;
+    padding: 10px 0;
+  }
+
+  /* Botão hamburguer fica sempre por cima */
+  .menu-toggle {
+    position: relative;
+    z-index: 10001;
+
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    display: block;
+
+    background: #08090b;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 10px;
+  }
+
+  .menu-toggle span {
+    position: absolute;
+    left: 10px;
+
+    width: 22px;
+    height: 2px;
+
+    background: #f4f5f2;
+
+    border-radius: 2px;
+
+    transition: .25s ease;
+  }
+
+  .menu-toggle span:first-child {
+    top: 16px;
+  }
+
+  .menu-toggle span:last-child {
+    top: 25px;
+  }
+
+  /* =====================================================
+     TIPOGRAFIA MOBILE
+     ===================================================== */
+
+  body {
+    font-size: 16px;
+  }
+
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 14.5vw, 70px);
+    line-height: .94;
+  }
+
+  .hero-text {
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .hero-kicker {
+    font-size: 12px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: clamp(43px, 12.5vw, 60px);
+    line-height: 1;
+  }
+
+  .section-intro {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .about-copy {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .fact-card h3 {
+    font-size: 16px;
+  }
+
+  .fact-card p {
+    font-size: 13px;
+  }
+
+  .service-card h3 {
+    font-size: 21px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .benefit-item h3 {
+    font-size: 17px;
+  }
+
+  .benefit-item p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .project-info h3 {
+    font-size: 28px;
+  }
+
+  .project-info p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .process-item h3 {
+    font-size: 18px;
+  }
+
+  .process-item p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .quote-sub {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .contact-copy > p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* =====================================================
+     BOTÕES
+     ===================================================== */
+
+  .btn {
+    min-height: 56px;
+    font-size: 13px;
+  }
+
+  /* =====================================================
+     HERO / ELEMENTOS DECORATIVOS
+     ===================================================== */
+
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .portrait-frame {
+    width: min(78vw, 380px);
+    max-width: 78vw;
+  }
+
+  .code-card {
+    max-width: 205px;
+    right: 0;
+  }
+
+  .floating-pill {
+    max-width: 150px;
+    white-space: nowrap;
+  }
+
+  .pill-top {
+    left: 0;
+  }
+
+  .pill-bottom {
+    right: 0;
+  }
+
+  .orbit-a,
+  .orbit-b {
+    max-width: none;
+    pointer-events: none;
+  }
+
+  /* =====================================================
+     PROJETOS
+     ===================================================== */
+
+  .projects-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .project-mock {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mock-content {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .mock-display strong {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  /* =====================================================
+     CONTATO / FOOTER
+     ===================================================== */
+
+  .contact-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+  }
+
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer-main,
+  .footer-bottom {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .header-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .logo-mark {
+    width: 27px;
+    height: 27px;
+  }
+
+  .section,
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero h1 {
+    font-size: 49px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  .mobile-menu {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mobile-menu a {
+    font-size: 23px;
+  }
+
+  .code-card {
+    transform: scale(.82) rotate(4deg);
+    transform-origin: top right;
+  }
+
+  .floating-pill {
+    transform: scale(.88);
+  }
+}
+
+
+/* =========================================================
+   PROTEÇÃO EXTRA CONTRA OVERFLOW HORIZONTAL
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  .hero-grid,
+  .about-grid,
+  .services-grid,
+  .benefit-layout,
+  .projects-grid,
+  .process-grid,
+  .contact-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-grid > *,
+  .about-grid > *,
+  .services-grid > *,
+  .benefit-layout > *,
+  .projects-grid > *,
+  .process-grid > *,
+  .contact-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .quote-card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .quote-card h2,
+  .quote-card p {
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   CORREÇÃO DEFINITIVA DO MENU MOBILE
+   ========================================================= */
+
+   @media (max-width: 900px) {
+
+    /* HEADER SEMPRE FIXO E ACIMA DE TUDO */
+    .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 72px !important;
+
+        z-index: 999999 !important;
+
+        background: rgba(8, 9, 11, 0.96) !important;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* CONTEÚDO DO HEADER */
+    .header-inner {
+        position: relative !important;
+
+        width: 100% !important;
+        height: 72px !important;
+
+        z-index: 1000000 !important;
+    }
+
+
+    /* =====================================================
+       BOTÃO HAMBURGUER
+       ===================================================== */
+
+    .menu-toggle {
+        display: block !important;
+
+        position: relative !important;
+
+        width: 44px !important;
+        height: 44px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        flex-shrink: 0;
+
+        z-index: 1000001 !important;
+
+        background: #08090b !important;
+
+        border: 1px solid rgba(255,255,255,.14) !important;
+        border-radius: 10px !important;
+
+        cursor: pointer;
+
+        isolation: isolate;
+    }
+
+
+    /* DUAS BARRINHAS */
+    .menu-toggle span {
+        position: absolute !important;
+
+        left: 10px !important;
+
+        width: 22px !important;
+        height: 2px !important;
+
+        margin: 0 !important;
+
+        background: #f4f5f2 !important;
+
+        border-radius: 3px;
+
+        z-index: 1000002 !important;
+
+        transition:
+            transform .25s ease,
+            top .25s ease,
+            opacity .25s ease;
+    }
+
+
+    .menu-toggle span:first-child {
+        top: 15px !important;
+    }
+
+
+    .menu-toggle span:last-child {
+        top: 25px !important;
+    }
+
+
+    /* =====================================================
+       MENU ABERTO
+       ===================================================== */
+
+    .mobile-menu {
+        display: flex !important;
+
+        position: fixed !important;
+
+        top: 72px !important;
+        left: 0 !important;
+
+        width: 100vw !important;
+        max-width: 100vw !important;
+
+        height: calc(100vh - 72px) !important;
+        height: calc(100dvh - 72px) !important;
+
+        margin: 0 !important;
+
+        padding: 35px 24px !important;
+
+        z-index: 999998 !important;
+
+        flex-direction: column !important;
+        gap: 12px !important;
+
+        background: #08090b !important;
+
+        border-top: 1px solid rgba(255,255,255,.08);
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        opacity: 0 !important;
+
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        transform: translateY(-10px) !important;
+
+        transition:
+            opacity .25s ease,
+            transform .25s ease,
+            visibility .25s ease;
+    }
+
+
+    /* MENU ABERTO */
+    .mobile-menu.open {
+        opacity: 1 !important;
+
+        visibility: visible !important;
+
+        pointer-events: auto !important;
+
+        transform: translateY(0) !important;
+    }
+
+
+    /* LINKS */
+    .mobile-menu a {
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 12px 0 !important;
+
+        color: #f4f5f2 !important;
+
+        font-size: 26px !important;
+
+        line-height: 1.15 !important;
+
+        letter-spacing: -.035em;
+
+        position: relative;
+
+        z-index: 999999;
+    }
+
+
+    .mobile-menu a:hover {
+        color: #6ea8ff !important;
+    }
+
+
+    .mobile-menu a:last-child {
+        color: #6ea8ff !important;
+
+        font-weight: 700;
+
+        margin-top: 10px;
+    }
+
+
+    /* =====================================================
+       IMPEDIR QUE O RESTO DO SITE FIQUE ACIMA DO MENU
+       ===================================================== */
+
+    .noise {
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+
+
+    .hero,
+    .section,
+    .benefit-section,
+    .site-footer {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    /* =====================================================
+       QUANDO O MENU ESTIVER ABERTO
+       ===================================================== */
+
+    body.menu-open {
+        overflow: hidden !important;
+    }
+}
+
+
+/* =========================================================
+   AJUSTE PARA CELULARES
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+    .site-header {
+        height: 72px !important;
+    }
+
+
+    .header-inner {
+        height: 72px !important;
+
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+
+    .menu-toggle {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+
+    .mobile-menu {
+        top: 72px !important;
+
+        height: calc(100vh - 72px) !important;
+        height: calc(100dvh - 72px) !important;
+
+        padding: 32px 22px !important;
+    }
+
+
+    .mobile-menu a {
+        font-size: 26px !important;
+
+        padding: 13px 0 !important;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .header-inner {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+
+    .menu-toggle {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+
+    .mobile-menu {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+
+    .mobile-menu a {
+        font-size: 24px !important;
+    }
+}
