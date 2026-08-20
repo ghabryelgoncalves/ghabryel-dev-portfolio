@@ -1,0 +1,13 @@
+const WHATSAPP_NUMBER="5500000000000";
+const WHATSAPP_MESSAGE="Olá! Vi o site da Norte Engenharia e gostaria de solicitar um orçamento.";
+document.querySelectorAll("[data-whatsapp]").forEach(a=>{a.href=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;a.target="_blank";a.rel="noopener noreferrer";});
+const menu=document.querySelector(".menu"),mobile=document.querySelector(".mobile-nav");
+menu?.addEventListener("click",()=>{mobile.classList.toggle("open");menu.textContent=mobile.classList.contains("open")?"×":"☰";});
+document.querySelectorAll(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>{mobile.classList.remove("open");menu.textContent="☰";}));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+const lightbox=document.querySelector(".lightbox"),lbImg=lightbox.querySelector("img");
+document.querySelectorAll(".project").forEach(p=>p.addEventListener("click",()=>{lbImg.src=p.dataset.full;lightbox.classList.add("open")}));
+lightbox.querySelector("button").addEventListener("click",()=>{lightbox.classList.remove("open");lbImg.src=""});
+lightbox.addEventListener("click",e=>{if(e.target===lightbox){lightbox.classList.remove("open");lbImg.src=""}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")lightbox.classList.remove("open")});

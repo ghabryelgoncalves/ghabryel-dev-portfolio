@@ -1049,3 +1049,922 @@ canvas {
         font-size: 24px !important;
     }
 }
+/* =========================================================
+   PRÉVIA REAL DO PROJETO — CHAVEIRO
+   ========================================================= */
+
+   .project-preview-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .real-preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #f4f1e9;
+    cursor: pointer;
+  }
+  
+  .preview-browser {
+    position: absolute;
+    width: 92%;
+    height: 92%;
+    left: 4%;
+    top: 5%;
+    background: #ffffff;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
+    transform: perspective(1000px) rotateX(1deg);
+    transition: transform .45s ease;
+  }
+  
+  .preview-browser-bar {
+    height: 27px;
+    background: #191b1d;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 5px;
+  }
+  
+  .preview-browser-bar span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #777;
+  }
+  
+  .preview-browser-bar small {
+    margin-left: 7px;
+    color: #aaa;
+    font-family: "DM Mono", monospace;
+    font-size: 6px;
+    letter-spacing: .05em;
+  }
+  
+  .preview-page {
+    height: calc(100% - 27px);
+    overflow: hidden;
+    background: #f8f6f0;
+  }
+  
+  .preview-nav {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    border-bottom: 1px solid #dedbd3;
+  }
+  
+  .preview-nav b {
+    font-size: 8px;
+    line-height: .9;
+    letter-spacing: -.03em;
+  }
+  
+  .preview-nav span {
+    font-size: 5px;
+    color: #777;
+    letter-spacing: .1em;
+  }
+  
+  .preview-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 22px 20px;
+    min-height: 170px;
+  }
+  
+  .preview-hero small {
+    display: block;
+    color: #bd7b12;
+    font-size: 6px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    margin-bottom: 8px;
+  }
+  
+  .preview-hero strong {
+    display: block;
+    font-size: 28px;
+    line-height: .9;
+    letter-spacing: -.07em;
+    color: #17191b;
+  }
+  
+  .preview-hero em {
+    display: block;
+    max-width: 150px;
+    margin-top: 10px;
+    font-size: 6px;
+    line-height: 1.4;
+    color: #777;
+    font-style: normal;
+  }
+  
+  .preview-hero button {
+    margin-top: 12px;
+    border: 0;
+    padding: 7px 10px;
+    background: #bd7b12;
+    color: #fff;
+    font-size: 6px;
+    font-weight: 800;
+  }
+  
+  .preview-key {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e8dfcb;
+    font-size: 48px;
+    transform: rotate(-12deg);
+  }
+  
+  .preview-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    padding: 0 20px;
+  }
+  
+  .preview-services div {
+    background: #fff;
+    border: 1px solid #e4e0d7;
+    padding: 10px;
+  }
+  
+  .preview-services b {
+    display: block;
+    font-family: "DM Mono", monospace;
+    color: #bd7b12;
+    font-size: 6px;
+    margin-bottom: 5px;
+  }
+  
+  .preview-services span {
+    display: block;
+    font-size: 7px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  
+  .preview-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(15, 17, 19, .72);
+    color: #fff;
+    opacity: 0;
+    transition: opacity .35s ease;
+    backdrop-filter: blur(3px);
+  }
+  
+  .preview-overlay span {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+  }
+  
+  .preview-overlay strong {
+    font-size: 20px;
+  }
+  
+  .project-preview-link:hover .preview-overlay {
+    opacity: 1;
+  }
+  
+  .project-preview-link:hover .preview-browser {
+    transform: perspective(1000px) scale(1.025);
+  }
+  
+  
+  /* =========================================================
+     RESPONSIVIDADE
+     ========================================================= */
+  
+  @media (max-width: 700px) {
+  
+    .preview-hero {
+      padding: 22px 15px 15px;
+      min-height: 150px;
+    }
+  
+    .preview-hero strong {
+      font-size: 22px;
+    }
+  
+    .preview-key {
+      width: 70px;
+      height: 70px;
+      font-size: 34px;
+    }
+  
+    .preview-services {
+      padding: 0 14px;
+    }
+  
+    .preview-services div {
+      padding: 7px;
+    }
+  
+    .preview-nav {
+      padding: 0 12px;
+    }
+  
+    .preview-nav span {
+      display: none;
+    }
+  
+  }
+
+  /* =========================================================
+   PRÉVIAS DOS 4 PROJETOS
+   ========================================================= */
+
+.project-preview-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.real-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f4f1e9;
+  cursor: pointer;
+}
+
+.preview-browser {
+  position: absolute;
+  width: 92%;
+  height: 92%;
+  left: 4%;
+  top: 5%;
+  background: #ffffff;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
+  transform: perspective(1000px) rotateX(1deg);
+  transition: transform .45s ease;
+}
+
+.preview-browser-bar {
+  height: 27px;
+  background: #191b1d;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 5px;
+}
+
+.preview-browser-bar span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #777;
+}
+
+.preview-browser-bar small {
+  margin-left: 7px;
+  color: #aaa;
+  font-family: "DM Mono", monospace;
+  font-size: 6px;
+  letter-spacing: .05em;
+}
+
+.preview-page {
+  height: calc(100% - 27px);
+  overflow: hidden;
+  background: #f8f6f0;
+}
+
+.preview-nav {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  border-bottom: 1px solid #dedbd3;
+}
+
+.preview-nav b {
+  font-size: 8px;
+  line-height: .9;
+  letter-spacing: -.03em;
+}
+
+.preview-nav span {
+  font-size: 5px;
+  color: #777;
+  letter-spacing: .1em;
+}
+
+.preview-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 22px 20px;
+  min-height: 170px;
+}
+
+.preview-hero small {
+  display: block;
+  color: #777;
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin-bottom: 8px;
+}
+
+.preview-hero strong {
+  display: block;
+  font-size: 28px;
+  line-height: .9;
+  letter-spacing: -.07em;
+  color: #17191b;
+}
+
+.preview-hero em {
+  display: block;
+  max-width: 150px;
+  margin-top: 10px;
+  font-size: 6px;
+  line-height: 1.4;
+  color: #777;
+  font-style: normal;
+}
+
+.preview-hero button {
+  margin-top: 12px;
+  border: 0;
+  padding: 7px 10px;
+  color: #fff;
+  font-size: 6px;
+  font-weight: 800;
+}
+
+.preview-symbol {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 42px;
+  flex-shrink: 0;
+}
+
+.preview-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  padding: 0 20px;
+}
+
+.preview-services div {
+  background: #fff;
+  border: 1px solid #e4e0d7;
+  padding: 10px;
+}
+
+.preview-services b {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 6px;
+  margin-bottom: 5px;
+}
+
+.preview-services span {
+  display: block;
+  font-size: 7px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CHAVEIRO
+   ========================================================= */
+
+.preview-chaveiro {
+  background: #e8dfcb;
+}
+
+.preview-chaveiro .preview-hero small,
+.preview-chaveiro .preview-services b {
+  color: #bd7b12;
+}
+
+.preview-chaveiro .preview-hero button {
+  background: #bd7b12;
+}
+
+.preview-chaveiro .preview-symbol {
+  background: #e8dfcb;
+}
+
+
+/* =========================================================
+   NUTRICIONISTA
+   ========================================================= */
+
+.preview-nutricionista {
+  background: #e8ded5;
+}
+
+.preview-nutricionista .preview-page {
+  background: #faf7f3;
+}
+
+.preview-nutricionista .preview-hero small,
+.preview-nutricionista .preview-services b {
+  color: #9b684f;
+}
+
+.preview-nutricionista .preview-hero button {
+  background: #9b684f;
+}
+
+.preview-nutricionista .preview-symbol {
+  background: #e6d7ca;
+}
+
+
+/* =========================================================
+   BARBEARIA
+   ========================================================= */
+
+.preview-barbearia {
+  background: #d6dce4;
+}
+
+.preview-barbearia .preview-page {
+  background: #f3f4f5;
+}
+
+.preview-barbearia .preview-hero small,
+.preview-barbearia .preview-services b {
+  color: #536a82;
+}
+
+.preview-barbearia .preview-hero button {
+  background: #263646;
+}
+
+.preview-barbearia .preview-symbol {
+  background: #d8e0e8;
+}
+
+
+/* =========================================================
+   ENGENHARIA
+   ========================================================= */
+
+.preview-engenharia {
+  background: #d5ddd8;
+}
+
+.preview-engenharia .preview-page {
+  background: #f3f5f3;
+}
+
+.preview-engenharia .preview-hero small,
+.preview-engenharia .preview-services b {
+  color: #376956;
+}
+
+.preview-engenharia .preview-hero button {
+  background: #376956;
+}
+
+.preview-engenharia .preview-symbol {
+  background: #d8e3dd;
+}
+
+
+/* =========================================================
+   EFEITO AO PASSAR O MOUSE
+   ========================================================= */
+
+.preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(15, 17, 19, .72);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .35s ease;
+  backdrop-filter: blur(3px);
+}
+
+.preview-overlay span {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+}
+
+.preview-overlay strong {
+  font-size: 20px;
+}
+
+.project-preview-link:hover .preview-overlay {
+  opacity: 1;
+}
+
+.project-preview-link:hover .preview-browser {
+  transform: perspective(1000px) scale(1.025);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .preview-hero {
+    padding: 22px 15px 15px;
+    min-height: 150px;
+  }
+
+  .preview-hero strong {
+    font-size: 22px;
+  }
+
+  .preview-symbol {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+  }
+
+  .preview-services {
+    padding: 0 14px;
+  }
+
+  .preview-services div {
+    padding: 7px;
+  }
+
+  .preview-nav {
+    padding: 0 12px;
+  }
+
+  .preview-nav span {
+    display: none;
+  }
+
+}
+
+/* =========================================================
+   PRÉVIAS DOS PROJETOS
+   ========================================================= */
+
+   .project-mock {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+  }
+  
+  /* Barra superior do navegador */
+  
+  .mock-browser {
+    position: relative;
+    z-index: 5;
+    flex: 0 0 52px;
+    height: 52px;
+    min-height: 52px;
+  
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  
+    padding: 0 18px;
+  
+    background: rgba(8, 9, 11, 0.94);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .browser-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .browser-controls span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: block;
+    background: rgba(255, 255, 255, 0.45);
+  }
+  
+  .mock-browser b {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.82);
+  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .mock-browser small {
+    margin-left: auto;
+  
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  
+    color: rgba(255, 255, 255, 0.45);
+  }
+  
+  /* Área da prévia */
+  
+  .project-preview {
+    position: relative;
+    display: block;
+  
+    width: 100%;
+    height: 368px;
+  
+    overflow: hidden;
+  
+    background: #111;
+  
+    text-decoration: none;
+  
+    cursor: pointer;
+  }
+  
+  /* iframe */
+  
+  .project-preview iframe {
+    position: absolute;
+  
+    top: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 100%;
+  
+    border: 0;
+  
+    pointer-events: none;
+  
+    background: #fff;
+  
+    transform: scale(1);
+    transform-origin: center top;
+  }
+  
+  /* Camada invisível que recebe o clique */
+  
+  .project-preview::after {
+    content: "";
+  
+    position: absolute;
+    inset: 0;
+  
+    background: transparent;
+  
+    transition:
+      background 0.3s ease;
+  }
+  
+  /* Overlay aparece ao passar o mouse */
+  
+  .preview-overlay {
+    position: absolute;
+  
+    inset: 0;
+  
+    z-index: 3;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  
+    opacity: 0;
+  
+    background: rgba(0, 0, 0, 0.48);
+  
+    transition:
+      opacity 0.3s ease,
+      background 0.3s ease;
+  
+    pointer-events: none;
+  }
+  
+  .preview-overlay span {
+    padding: 11px 16px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+  
+    background: rgba(10, 10, 10, 0.65);
+  
+    color: #fff;
+  
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+  
+  .preview-overlay strong {
+    width: 34px;
+    height: 34px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 50%;
+  
+    background: #fff;
+    color: #111;
+  
+    font-size: 15px;
+  }
+  
+  .project-preview:hover .preview-overlay {
+    opacity: 1;
+  }
+  
+  .project-preview:hover::after {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Número do projeto */
+  
+  .project-number {
+    position: absolute;
+  
+    right: 18px;
+    bottom: 18px;
+  
+    z-index: 6;
+  
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+  
+    color: rgba(255, 255, 255, 0.5);
+  
+    pointer-events: none;
+  }
+  
+  
+  /* =========================================================
+     INFORMAÇÕES DO PROJETO
+     ========================================================= */
+  
+  .project-info {
+    position: relative;
+    z-index: 10;
+  
+    padding: 24px 4px 8px;
+  }
+  
+  .project-info h3 {
+    margin: 10px 0 8px;
+  }
+  
+  .project-info p {
+    margin-bottom: 16px;
+  }
+  
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  
+  .tech-list span {
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+  }
+  
+  
+  /* =========================================================
+     RESPONSIVIDADE
+     ========================================================= */
+  
+  @media (max-width: 768px) {
+  
+    .project-mock {
+      min-height: 330px;
+      border-radius: 14px;
+    }
+  
+    .mock-browser {
+      height: 46px;
+      min-height: 46px;
+      padding: 0 13px;
+      gap: 10px;
+    }
+  
+    .mock-browser b {
+      font-size: 9px;
+    }
+  
+    .mock-browser small {
+      font-size: 7px;
+    }
+  
+    .project-preview {
+      height: 284px;
+    }
+  
+    .project-preview iframe {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .preview-overlay {
+      opacity: 1;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.48),
+        transparent 45%
+      );
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 18px;
+    }
+  
+    .preview-overlay span {
+      font-size: 9px;
+      padding: 9px 13px;
+    }
+  
+    .preview-overlay strong {
+      width: 30px;
+      height: 30px;
+      font-size: 13px;
+    }
+  
+    .project-info {
+      padding: 20px 2px 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    .project-mock {
+      min-height: 290px;
+    }
+  
+    .mock-browser {
+      height: 42px;
+      min-height: 42px;
+    }
+  
+    .browser-controls span {
+      width: 6px;
+      height: 6px;
+    }
+  
+    .mock-browser b {
+      font-size: 8px;
+    }
+  
+    .mock-browser small {
+      display: none;
+    }
+  
+    .project-preview {
+      height: 248px;
+    }
+  
+    .project-number {
+      right: 12px;
+      bottom: 12px;
+    }
+  }
